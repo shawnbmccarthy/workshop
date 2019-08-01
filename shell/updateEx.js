@@ -4,17 +4,33 @@ const updateEx = (() => {
     };
     
     return {
-        updateOneDoc: (db, coll, q, u) => {
-            setDB(db);
+        updateOneDoc: (dbname, coll, q, u) => {
+            setDB(dbname);
             /*
              * your code here
              */
+            return db[coll].updateOne(q, u);
         },
-        upsertOneDoc:  (db, coll, q, u) => {
-            setDB(db);
+        upsertOneDoc:  (dbname, coll, q, u) => {
+            setDB(dbname);
             /*
              * your code here
              */
+            return db[coll].updateOne(q, u, {upsert: true});
+        },
+        updateManyDocs: (dbname, coll, q, u) => {
+            setDB(dbname);
+            /*
+             * your code here
+             */
+            return db[coll].updateMany(q, u);
+        },
+        upsertManyDocs:  (dbname, coll, q, u) => {
+            setDB(dbname);
+            /*
+             * your code here
+             */
+            return db[coll].updateMany(q, u, {upsert: true});
         }
     }
 })();

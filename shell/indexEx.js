@@ -4,16 +4,16 @@ const indexEx = (() => {
     };
 
     return {
-        createIndex: (db, coll,  idx, opt) => {
-            setDb(db);
+        createIndex: (dbname, coll,  idx, opt) => {
+            setDB(dbname);
             db[coll].createIndex(idx, opt);
         },
-        explain: (db, coll,  q) => {
-            setDb(db);
+        explain: (dbname, coll,  q) => {
+            setDB(dbname);
             printjson(db[coll].find(q).explain())
         },
-        fullExplain: (db, coll,  q) => {
-            setDb(db);
+        fullExplain: (dbname, coll,  q) => {
+            setDB(dbname);
             printjson(db[coll].find(q).explain(true));
         }
     }

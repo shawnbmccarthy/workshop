@@ -8,8 +8,8 @@ const aggEx = (() => {
 
     return {
         // db -> name of database, coll -> collection name, agg -> array of agg commands
-        runAgg: (db, coll, agg) => {
-            setDb(db);
+        runAgg: (dbname, coll, agg) => {
+            setDB(dbname);
             db[coll].aggregate(agg).forEach(
                 doc => {printjson(doc);}
             );

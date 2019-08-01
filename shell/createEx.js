@@ -8,14 +8,14 @@ const createEx = (() => {
 
     return {
         // db -> name of database, coll -> name of collection, doc -> json document to insert
-        insertOne: (db, coll, doc) => {
-            setDb(db);
-            return  db[coll].insertOne(doc);
+        insertOne: (dbname, coll, doc) => {
+            setDB(dbname);
+            return  db.getCollection(coll).insertOne(doc);
         },
         // db -> name of database, coll -> name of collection, docs -> array of json documents
-        insertMany: (db, coll, docs) => {
-            setDb(db);
-            return  db[coll].insertMany(docs);
+        insertMany: (dbname, coll, docs) => {
+            setDB(dbname);
+            return  db.getCollection(coll).insertMany(docs);
         }
     }
 })();

@@ -5,21 +5,21 @@ const readEx = (() => {
 
     return {
         //db -> name  of database, coll -> name of collection, q -> query to run
-        findOneDoc: (db, coll, q) => {
-            setDb(db);
+        findOneDoc: (dbname, coll, q) => {
+            setDB(dbname);
             printjson(db[coll].findOne(q));
         },
         //db -> name of database, coll  -> name of collection, q -> query to run, limit -> limit for cursor
-        FindDoc: (db, coll, q, limit=100) => {
-            setDb(db);
-            db[coll].find(q).limit(100).forEach(
+        FindDoc: (dbname, coll, q, limit=100) => {
+            setDB(dbname);
+            db[coll].find(q).limit(limit).forEach(
                 doc =>  {printjson(doc);}
             );
         },
         //db -> name of database, coll -> name  of collection, q -> query, p -> projection, limit -> limit for cursor
-        findAndProject: (db, coll, q, p, limit=100) => {
-            setDb(db);
-            db[coll].find(q, p).limit(100).forEach(
+        findAndProject: (dbname, coll, q, p, limit=100) => {
+            setDB(dbname);
+            db[coll].find(q, p).limit(limit).forEach(
                 doc => {printjson(doc);}
             );
         }

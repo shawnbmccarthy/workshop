@@ -7,12 +7,12 @@ const deleteEx = (() => {
     };
 
     return {
-        deleteOneDoc: (db, coll, q) => {
-            setDb(db);
+        deleteOneDoc: (dbname, coll, q) => {
+            setDB(dbname);
             return db[coll].deleteOne(q);
         },
-        deleteManyDocs: (db, coll, q) => {
-            setDb(db);
+        deleteManyDocs: (dbname, coll, q) => {
+            setDB(dbname);
             return db[coll].deleteMany(db, coll, q);
         }
     }
