@@ -3,11 +3,11 @@ const appDb = require('../db');
 
 module.exports = () => {
     router.get('/api/profileService/v1/users', (req, res) => {
-        /*
-         * return an array
-         */
         appDb.getDatabase()
             .then(db => {
+                /*
+                 * This is the freebie!
+                 */
                 var cursor = db.collection('finduserprofile').find();
                 cursor.toArray().then(docs => { return  res.json({result: docs})});
             })
