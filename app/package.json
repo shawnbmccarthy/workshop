@@ -1,0 +1,9 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "mongodb": "^3.2.7"
+  }
+}
