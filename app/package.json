@@ -23,7 +23,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "body-parser": "^1.19.0",
-    "handlebars": "^4.7.3",
     "mongodb": "^3.5.3"
   },
   "devDependencies": {
