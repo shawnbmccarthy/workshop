@@ -21,7 +21,7 @@
   "author": "shawn.mccarthy@mongodb.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "body-parser": "^1.19.0",
     "mongodb": "^3.5.3"
   },
